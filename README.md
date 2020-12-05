@@ -1,3 +1,3 @@
-# The ridiculously over-engineered orchestra
+# Orchestra Notes
 
-A learning experiment for people who've had enough of online courses
+A note-taking app for the Ridiculously Over-Engineered Orchestra project 
