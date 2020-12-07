@@ -1,0 +1,25 @@
+{
+  "name": "orchestra-notes",
+  "version": "1.0.0",
+  "description": "A note-taking app for the Ridiculously Over-Engineered Orchestra project",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "elm-test": "^0.19.1-revision4"
+  },
+  "scripts": {
+    "test": "elm-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moraleida/orchestra-notes.git"
+  },
+  "author": "Ricardo Moraleida",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/moraleida/orchestra-notes/issues"
+  },
+  "homepage": "https://github.com/moraleida/orchestra-notes#readme"
+}

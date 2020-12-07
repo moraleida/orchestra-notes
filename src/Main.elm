@@ -79,10 +79,13 @@ subscriptions _ =
 
 view : Model -> Browser.Document Msg
 view model =
-  { title = "URL Interceptor"
+  { title = "Ridiculous Orchestra Notes and Tasks"
   , body =
-      [ text "The current URL is: "
+      [ h1 [] [ text "Ridiculous Orchestra Notes and Tasks" ]
       , b [] [ text (Url.toString model.url) ]
+      , div [] [
+        input [] []
+      ]
       , ul []
           [ viewLink "/home"
           , viewLink "/profile"
