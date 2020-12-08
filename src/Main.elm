@@ -84,15 +84,13 @@ view model =
         [ h1 [] [ text "Ridiculous Orchestra Notes and Tasks" ]
         , b [] [ text (Url.toString model.url) ]
         , div []
-            [ input [] []
+            [ input [ placeholder "Title" ] []
+            , br [] []
+            , textarea [ placeholder "Note / Task"] []
+            , br [] []
+            , button [] [ text "+" ]
             ]
-        , ul []
-            [ viewLink "/home"
-            , viewLink "/profile"
-            , viewLink "/reviews/the-century-of-the-self"
-            , viewLink "/reviews/public-opinion"
-            , viewLink "/reviews/shah-of-shahs"
-            ]
+        ,   viewNotes
         ]
     }
 
@@ -100,3 +98,9 @@ view model =
 viewLink : String -> Html msg
 viewLink path =
     li [] [ a [ href path ] [ text path ] ]
+
+viewNotes : Html msg
+viewNotes = 
+    ul [] [
+    li [] [ article [][] ]
+    ]
