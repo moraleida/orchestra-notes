@@ -4,5 +4,4 @@ EXPOSE 8000
 
 WORKDIR /opt/app
 
-ENTRYPOINT ["elm"]
-CMD ["reactor"]
+ENTRYPOINT elm make src/Main.elm --output index.js && elm reactor
