@@ -3,9 +3,10 @@ module HomePage exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
+
 view model =
     div [ class "jumbotron" ]
-        [ h1 [] [ text "Welcome to Dunder Mifflin!"]
+        [ h1 [] [ text "Welcome to Dunder Mifflin!" ]
         , p []
             [ text "Dunder Mifflin Inc. (stock symbol "
             , strong [] [ text "DMI" ]
@@ -17,6 +18,7 @@ view model =
                 """
             ]
         ]
+
 
 main =
     view "dummy model"

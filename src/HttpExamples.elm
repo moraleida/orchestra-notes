@@ -1,14 +1,16 @@
 module HttpExamples exposing (Model)
 
 import Browser
-import Http
 import Html exposing (..)
 import Html.Events exposing (onClick)
+import Http
+
 
 type alias Model =
     { nicknames : List String
     , errorMessage : Maybe String
     }
+
 
 view : Model -> Html Msg
 view model =
@@ -17,12 +19,14 @@ view model =
             [ text "Get data from server" ]
         ]
 
+
 viewNicknames : List String -> Html Msg
 viewNicknames nicknames =
-        div []
+    div []
         [ h3 [] [ text "Old School Main Characters" ]
         , ul [] (List.map viewNickname nicknames)
         ]
+
 
 viewNickname : String -> Html Msg
 viewNickname nickname =
@@ -33,16 +37,19 @@ type Msg
     = SendHttpRequest
     | DataReceived (Result Http.Error String)
 
+
 url : String
 url =
     "http://localhost:5016/old-school.txt"
 
+
 getNicknames : Cmd Msg
 getNicknames =
     Http.get
-    { url = url
-    , expect = Http.expectString DataReceived
-    }
+        { url = url
+        , expect = Http.expectString DataReceived
+        }
+
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
@@ -56,7 +63,7 @@ update msg model =
                     String.split "," nicknameStr
             in
             ( { model | nicknames = nicknames }, Cmd.none )
-            
+
         DataReceived (Err _) ->
             ( model, Cmd.none )
 
@@ -64,10 +71,11 @@ update msg model =
 init : () -> ( Model, Cmd Msg )
 init _ =
     ( { nicknames = []
-        , errorMessage = Nothing
-        }
+      , errorMessage = Nothing
+      }
     , Cmd.none
     )
+
 
 main : Program () Model Msg
 main =
